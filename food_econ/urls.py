@@ -12,7 +12,7 @@ admin.autodiscover()
 # to the project's homepage.
 
 urlpatterns = patterns("",
-
+    ("^purchases/", include("purchase_tracker.urls")),
     # Change the admin prefix here to use an alternate URL for the
     # admin interface, which would be marginally more secure.
     ("^admin/", include(admin.site.urls)),
@@ -82,7 +82,6 @@ urlpatterns = patterns("",
     # need to use the ``SITE_PREFIX`` setting as well.
 
     # ("^%s/" % settings.SITE_PREFIX, include("mezzanine.urls"))
-
 )
 
 # Adds ``STATIC_URL`` to the context of error pages, so that error
